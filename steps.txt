@@ -1,0 +1,25 @@
+1. First i strted by creating a landing page 
+2. writing some react and csss
+3. the main part comes with making the login page 
+Started mking Route by react Router dom
+made different login and signup pages
+after successsfully started making routes to the login and register pages 
+i started connecting the backend sefrvices to register a user 
+for that i used express 
+created a registration form which include name email and pass
+created the api index.js
+in registerpage created a function to handle registrai=tion
+which uses axios to connect to backend as a XMl htttp request
+Here we use axios.post to use the information provided by user to our backend
+then at the backend in index.js used cors (to collect the information )
+coming from the frontend
+Set the credentials as true and add the origin of your frontend url
+this will create a connection between your front and back end
+make a app.post to handle the register yser here create a user
+MAke a mongoose connection
+did this by mongoose atlas generating a string then connecting it heree
+make a model of user in which write the userSchema
+put the generated string in the dotenv file 
+include name , emqil , password ,
+export this schema model then use it in app.post as User.create to register a new user
+now password will come as a string so we have to use bcrypt

@@ -120,7 +120,7 @@ app.post("/login", async (req, res, next) => {
 
         res
           .cookie("token", token, {
-            httpOnly: true,
+            // httpOnly: true,
             secure: process.env.NODE_ENV === "production",
           })
           .json(userDoc);

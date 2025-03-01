@@ -20,6 +20,8 @@ const { AuthError } = require("./errors"); // Add this custom error handler
 const bcryptSalt = bcrypt.genSaltSync(10);
 const secret = process.env.JWT_SECRET; // Using environment variable for secret
 
+app.set("trust proxy", 1);
+
 app.use(express.json());
 app.use(CookieParser());
 app.use("/uploads", express.static(__dirname + "/uploads"));

@@ -14,14 +14,13 @@ const multer = require("multer");
 const fs = require("fs");
 const sharp = require("sharp");
 const rateLimit = require("express-rate-limit");
-const { body, validationResult } = require("express-validator");
+const { body, validationResult, cookie } = require("express-validator");
 const { AuthError } = require("./errors"); // Add this custom error handler
 const { log } = require("console");
 
 const bcryptSalt = bcrypt.genSaltSync(10);
 const secret = process.env.JWT_SECRET; // Using environment variable for secret
 console.log(secret);
-
 
 app.set("trust proxy", 1);
 
@@ -33,7 +32,7 @@ app.use("/uploads", express.static(__dirname + "/uploads"));
 app.use(
   cors({
     credentials: true,
-    origin: "https://book-it-tau.vercel.app",
+    origin: ["https://book-it-tau.vercel.app","http://localhost:5174"],
   })
 );
 
@@ -133,6 +132,8 @@ app.post("/login", async (req, res, next) => {
 
 app.get("/profile", async (req, res, next) => {
   const { token } = req.cookies;
+  console.log({ cookie: req.cookies });
+
   if (token) {
     try {
       const userData = await getUserDataFromReq(req);

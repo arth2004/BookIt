@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import IndexPage from "./Pages/indexPage";
 import LoginPage from "./Pages/loginPage";
-import Layout from "./components/LAyout";
+import Layout from "./components/Layout";
 import RegisterPage from "./Pages/RegisterPage";
 import axios from "axios";
 import { UserContextProvider } from "./userContext";
@@ -14,7 +14,7 @@ import { BookingPage } from "./Pages/BookingPage";
 import { BookingsPage } from "./Pages/BookingsPage";
 import { useEffect, useState } from "react";
 
-axios.defaults.baseURL = "http://localhost:4000";
+axios.defaults.baseURL = "https://bookit-ianc.onrender.com";
 axios.defaults.withCredentials = true;
 
 function App() {

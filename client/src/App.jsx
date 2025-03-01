@@ -17,22 +17,9 @@ import { useEffect, useState } from "react";
 axios.defaults.baseURL = "https://bookit-ianc.onrender.com";
 axios.defaults.withCredentials = true;
 
+
+
 function App() {
-  const [query, setQuery] = useState("");
-  const [answer, setAnswer] = useState("");
-  useEffect(() => {
-    const getData = async () => {
-      const response = await axios.get("http://localhost:5000");
-      if (response.data) {
-        console.log({ d: response.data });
-      } else {
-        console.log(response);
-      }
-    };
-
-    getData();
-  }, []);
-
   return (
     <UserContextProvider>
       <Routes>

@@ -16,9 +16,14 @@ const sharp = require("sharp");
 const rateLimit = require("express-rate-limit");
 const { body, validationResult } = require("express-validator");
 const { AuthError } = require("./errors"); // Add this custom error handler
+const { log } = require("console");
 
 const bcryptSalt = bcrypt.genSaltSync(10);
 const secret = process.env.JWT_SECRET; // Using environment variable for secret
+console.log(secret);
+
+
+app.set("trust proxy", 1);
 
 app.use(express.json());
 app.use(CookieParser());

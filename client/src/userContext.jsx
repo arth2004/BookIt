@@ -8,17 +8,11 @@ export function UserContextProvider({ children }) {
   const [user, setUser] = useState(null);
   const [ready, setReady] = useState(false);
 
-  const userCookie = useCookie("token");
-
-  console.log({ userCookie });
-
   useEffect(() => {
     if (!user) {
       axios
         .get("/profile", {
-          headers: {
-            Cookie: `token=${userCookie}`,
-          },
+          withCredentials: true,
         })
         .then(({ data }) => {
           // console.log({data});

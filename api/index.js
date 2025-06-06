@@ -16,7 +16,7 @@ const sharp = require("sharp");
 const rateLimit = require("express-rate-limit");
 const { body, validationResult, cookie } = require("express-validator");
 const { AuthError } = require("./errors"); // Add this custom error handler
-
+const port = process.env.PORT;
 const bcryptSalt = bcrypt.genSaltSync(10);
 const secret = process.env.JWT_SECRET; // Using environment variable for secret
 console.log(secret);
@@ -372,6 +372,6 @@ app.use((err, req, res, next) => {
     .json({ error: "Something went wrong, please try again later" });
 });
 
-app.listen(4000, () => {
+app.listen(port, () => {
   console.log("Server is running on port 4000");
 });

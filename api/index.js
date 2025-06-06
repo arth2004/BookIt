@@ -16,7 +16,6 @@ const sharp = require("sharp");
 const rateLimit = require("express-rate-limit");
 const { body, validationResult, cookie } = require("express-validator");
 const { AuthError } = require("./errors"); // Add this custom error handler
-const { log } = require("console");
 
 const bcryptSalt = bcrypt.genSaltSync(10);
 const secret = process.env.JWT_SECRET; // Using environment variable for secret
@@ -32,7 +31,7 @@ app.use("/uploads", express.static(__dirname + "/uploads"));
 app.use(
   cors({
     credentials: true,
-    origin: ["https://book-it-tau.vercel.app", "http://localhost:5174"],
+    origin: ["", "http://localhost:5173"],
   })
 );
 
@@ -61,7 +60,7 @@ function getUserDataFromReq(req) {
 
 // Routes
 
-app.get("/test", (req, res) => {
+app.get("/get", (req, res) => {
   res.json("ok");
 });
 

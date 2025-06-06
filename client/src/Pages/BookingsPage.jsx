@@ -15,8 +15,9 @@ export const BookingsPage = () => {
   return (
     <div>
       <AccountNav />
+
       <div className="flex flex-col gap-4">
-        {bookings?.length > 0 &&
+        {bookings?.length > 0 ? (
           bookings.map((booking) => (
             <Link
               to={`/account/bookings/${booking._id}`}
@@ -55,7 +56,16 @@ export const BookingsPage = () => {
                 </div>
               </div>
             </Link>
-          ))}
+          ))
+        ) : (
+          <div className="flex justify-center items-center text-red-500">
+            <div>
+              <h1 className="text-5xl font-bold ">
+                No Booking Made Yet <Link to="/">Go to Home</Link>{" "}
+              </h1>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -33,22 +33,22 @@ export default function PlacesPage() {
           </svg>
           Add new place
         </Link>
-        <div className="mt-4">
+        <div className="m-4">
           {places.length > 0 &&
             places.map((place, index) => (
               <Link
                 to={"/account/places/" + place._id}
-                className="flex cursor-pointer gap-4 bg-gray-200 p-4 rounded-2xl"
+                className="flex cursor-pointer gap-4 bg-gray-200 p-4 rounded-2xl mt-2"
                 key={index}
               >
                 <div className="flex h-40 bg-gray-300 rounded-2xl grow shrink-0">
-                  <PlaceImg place={place} />
+                  <PlaceImg place={place} className="h-48 w-48  object-cover object-center" />
                 </div>
                 <div className="">
                   <h2 className="text-xl font-bold text-justify">
                     {place.title}
                   </h2>
-                  <p className="text-base mt-2 text-justify">
+                  <p className="text-base mt-2 text-justify ">
                     {place.description}
                   </p>
                 </div>

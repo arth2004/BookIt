@@ -20,7 +20,7 @@ export function UserContextProvider({ children }) {
           setReady(true);
         });
     }
-  }, [userCookie]);
+  }, [useCookie]);
   return (
     <UserContext.Provider value={{ user, setUser, ready }}>
       {children}

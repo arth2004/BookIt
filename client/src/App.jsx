@@ -14,8 +14,8 @@ import { BookingPage } from "./Pages/BookingPage";
 import { BookingsPage } from "./Pages/BookingsPage";
 import { useEffect, useState } from "react";
 
-// axios.defaults.baseURL = "https://bookit-ianc.onrender.com";
-axios.defaults.baseURL = "http://localhost:4000";
+axios.defaults.baseURL = process.env.BACKEND_BASE_URL;
+// axios.defaults.baseURL = "http://localhost:4000";
 axios.defaults.withCredentials = true;
 
 function App() {

@@ -14,7 +14,7 @@ import { BookingPage } from "./Pages/BookingPage";
 import { BookingsPage } from "./Pages/BookingsPage";
 import { useEffect, useState } from "react";
 
-axios.defaults.baseURL = process.env.BACKEND_BASE_URL;
+axios.defaults.baseURL = import.meta.env.VITE_BACKEND_BASE_URL;
 // axios.defaults.baseURL = "http://localhost:4000";
 axios.defaults.withCredentials = true;
 
